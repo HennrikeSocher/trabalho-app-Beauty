@@ -183,7 +183,7 @@
         android:textSize="18sp"
         android:textStyle="bold"
         android:backgroundTint="@color/button_color"
-        app:cornerRadius="15dp"
+        app:cornerRadius="20dp"
         android:layout_margin="40dp"
 
         />
