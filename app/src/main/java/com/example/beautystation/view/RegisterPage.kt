@@ -47,6 +47,8 @@ class RegisterPage : AppCompatActivity() {
                 }
             }
         }
+
+
     }
 
     private fun message(view: View, message: String) {
@@ -55,6 +57,9 @@ class RegisterPage : AppCompatActivity() {
         snackbar.setTextColor(Color.parseColor("#FFFFFF"))
         snackbar.show()
     }
+
+
+
 
     // Navegação para a activity de login
     private fun navToLoginPage() {

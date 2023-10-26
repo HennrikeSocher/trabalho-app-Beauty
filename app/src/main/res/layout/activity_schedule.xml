@@ -10,7 +10,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     android:background="@color/purplebg"
     tools:context=".view.Schedule">
@@ -99,78 +99,42 @@
         android:layout_marginEnd="20dp"
         >
 
-        <CheckBox
-            android:id="@+id/profissional1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-
-            />
-
-        <TextView
+        <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sandra Buarque"
-            android:textSize="18sp"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            />
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp">
 
-    </LinearLayout>
+            <RadioButton
+                android:id="@+id/profissional1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Sandra Buarque"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        >
+            <RadioButton
+                android:id="@+id/profissional2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pedro Rocha"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
 
-        <CheckBox
-            android:id="@+id/profissional2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-
-            />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Pedro Rocha"
-            android:textSize="18sp"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        >
-
-        <CheckBox
-            android:id="@+id/profissional3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="false"
-
-            />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Rodrigo Gomes Junior"
-            android:textSize="18sp"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            />
+            <RadioButton
+                android:id="@+id/profissional3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rodrigo Gomes Junior"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+        </RadioGroup>
 
     </LinearLayout>
 

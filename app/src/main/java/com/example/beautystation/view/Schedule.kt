@@ -105,7 +105,7 @@ class Schedule : AppCompatActivity() {
     private fun message (view: View, message: String, color: String) {
         val snackbar = Snackbar.make(view,message,Snackbar.LENGTH_SHORT)
         snackbar.setBackgroundTint(Color.parseColor(color))
-        snackbar.setTextColor(Color.parseColor("#FFFFFFF"))
+        snackbar.setTextColor(Color.parseColor("#FFFFFF"))
         snackbar.show()
 
     }

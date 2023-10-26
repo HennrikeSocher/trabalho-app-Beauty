@@ -35,7 +35,7 @@ class Home : AppCompatActivity() {
 
         val recyclerViewServices = binding.viewServices
         val layoutManager = LinearLayoutManager(this) // Crie um LinearLayoutManager
-        layoutManager.orientation = LinearLayoutManager.VERTICAL // Configure a orientação para vertical
+        layoutManager.orientation = LinearLayoutManager.VERTICAL
         recyclerViewServices.layoutManager = layoutManager
 
         servicesAdapter = ServicesAdapter(this, servicesList)
