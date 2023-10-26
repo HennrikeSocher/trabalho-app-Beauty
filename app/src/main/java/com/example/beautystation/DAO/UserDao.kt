@@ -1,10 +1,10 @@
 package com.example.beautystation.DAO
 import androidx.room.Dao
 import androidx.room.Insert
+import androidx.room.OnConflictStrategy
 import com.example.beautystation.models.User
-
 @Dao
 interface UserDao {
-    @Insert
-    suspend fun insert(user: User)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insert(user: User)
 }

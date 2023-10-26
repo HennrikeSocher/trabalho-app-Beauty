@@ -7,23 +7,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.app.Application
-import androidx.room.Room
-import com.example.beautystation.database.AppDatabase
 
 class MainActivity : AppCompatActivity() {
-    companion object {
-        lateinit var database: AppDatabase
-            private set
-    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        database = Room.databaseBuilder(
-            applicationContext,
-            AppDatabase::class.java, "my-database"
-        ).build()
-
         setContentView(R.layout.activity_main)
         supportActionBar?.hide()
         window.statusBarColor = Color.parseColor("#DC98C0")
@@ -34,6 +21,4 @@ class MainActivity : AppCompatActivity() {
             finish()
         },3000)
     }
-
-
 }
