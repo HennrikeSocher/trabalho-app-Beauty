@@ -3,12 +3,14 @@ import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.View
 import com.example.beautystation.R
 import com.example.beautystation.databinding.ActivityRegisterPageBinding
 import com.google.android.material.snackbar.Snackbar
 
-private lateinit var binding: ActivityRegisterPageBinding
+lateinit var binding: ActivityRegisterPageBinding
 
 class RegisterPage : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,8 +18,6 @@ class RegisterPage : AppCompatActivity() {
 
         binding = ActivityRegisterPageBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        setContentView(R.layout.activity_register_page)
         supportActionBar?.hide()
         window.statusBarColor = Color.parseColor("#DC98C0")
 
@@ -43,7 +43,12 @@ class RegisterPage : AppCompatActivity() {
                     message(it, "As senhas não coincidem")
                 }
                 else -> {
-                    navToLoginPage()
+                    messageSucess(it, "Usuario Cadastrado")
+                    Handler(Looper.getMainLooper()).postDelayed({
+                        val intent = Intent(this, LoginPage::class.java)
+                        startActivity(intent)
+                        finish()
+                    },1000)
                 }
             }
         }
@@ -54,6 +59,13 @@ class RegisterPage : AppCompatActivity() {
     private fun message(view: View, message: String) {
         val snackbar = Snackbar.make(view, message, Snackbar.LENGTH_SHORT)
         snackbar.setBackgroundTint(Color.parseColor("#E41414"))
+        snackbar.setTextColor(Color.parseColor("#FFFFFF"))
+        snackbar.show()
+    }
+
+    private fun messageSucess(view: View, message: String) {
+        val snackbar = Snackbar.make(view, message, Snackbar.LENGTH_SHORT)
+        snackbar.setBackgroundTint(Color.parseColor("#03fc0b"))
         snackbar.setTextColor(Color.parseColor("#FFFFFF"))
         snackbar.show()
     }
