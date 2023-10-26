@@ -10,7 +10,7 @@ import com.example.beautystation.R
 import com.example.beautystation.databinding.ActivityRegisterPageBinding
 import com.google.android.material.snackbar.Snackbar
 
-lateinit var binding: ActivityRegisterPageBinding
+private lateinit var binding: ActivityRegisterPageBinding
 
 class RegisterPage : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
