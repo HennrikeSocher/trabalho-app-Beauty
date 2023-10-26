@@ -13,6 +13,9 @@
         android:theme="@style/Theme.BeautyStation"
         tools:targetApi="34">
         <activity
+            android:name=".view.RegisterPage"
+            android:exported="false" />
+        <activity
             android:name=".view.Schedule"
             android:exported="false" />
         <activity

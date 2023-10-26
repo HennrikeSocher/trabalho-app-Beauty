@@ -23,6 +23,7 @@ class Schedule : AppCompatActivity() {
         setContentView(binding.root)
 
         supportActionBar?.hide()
+        window.statusBarColor = Color.parseColor("#DC98C0")
 
         val name = intent.extras?.getString("nome").toString()
 

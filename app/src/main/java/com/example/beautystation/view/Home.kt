@@ -1,10 +1,12 @@
 package com.example.beautystation.view
 
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.beautystation.R
 import com.example.beautystation.adpter.ServicesAdapter
 import com.example.beautystation.databinding.ActivityHomeBinding
@@ -22,6 +24,7 @@ class Home : AppCompatActivity() {
         setContentView(binding.root)
 
         supportActionBar?.hide()
+        window.statusBarColor = Color.parseColor("#DC98C0")
 
         val name = intent.getStringExtra("nome")
 
@@ -31,11 +34,16 @@ class Home : AppCompatActivity() {
         textViewName.text = "Bem-Vindo, $name"
 
         val recyclerViewServices = binding.viewServices
-        recyclerViewServices.layoutManager = GridLayoutManager(this, 2)
+        val layoutManager = LinearLayoutManager(this) // Crie um LinearLayoutManager
+        layoutManager.orientation = LinearLayoutManager.VERTICAL // Configure a orientação para vertical
+        recyclerViewServices.layoutManager = layoutManager
+
         servicesAdapter = ServicesAdapter(this, servicesList)
         recyclerViewServices.setHasFixedSize(true)
         recyclerViewServices.adapter = servicesAdapter
+
         getServices()
+
 
         binding.buttonSchedule.setOnClickListener {
             val  intent = Intent(this, Schedule::class.java)
